@@ -1,0 +1,40 @@
+{
+  "name": "cursor-shape-detector",
+  "version": "1.0.0",
+  "description": "Detect Mouse Cursor Shapes like iBeam, Cross, Pointer, etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "install": "node-gyp rebuild",
+    "rebuild": "node-gyp rebuild",
+    "clean": "node-gyp clean"
+  },
+  "keywords": ["cursor", "mouse", "pointer", "node", "native-addon"],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamdpunkr1/cursor-shape-detector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iamdpunkr1/cursor-shape-detector/issues"
+  },
+  "homepage": "https://github.com/iamdpunkr1/cursor-shape-detector",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-addon-api": "^7.0.0"
+  },
+  "devDependencies": {
+    "node-gyp": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "os": ["win32", "darwin", "linux"],
+  "cpu": ["x64", "arm64"],
+  "files": [
+    "index.js",
+    "build/",
+    "src/"
+  ]
+}
