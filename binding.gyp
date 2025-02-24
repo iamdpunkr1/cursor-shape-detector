@@ -1,7 +1,7 @@
 {
   "targets": [{
     "target_name": "cursor",
-    "sources": [ "src/cursor.cc" ],
+    "sources": [],
     "include_dirs": [
       "<!@(node -p \"require('node-addon-api').include\")"
     ],
@@ -11,6 +11,7 @@
     "defines": [ "NAPI_DISABLE_CPP_EXCEPTIONS" ],
     "conditions": [
       ['OS=="win"', {
+        "sources": [ "src/cursor.cc" ],
         "cflags!": [ "-fno-exceptions" ],
         "cflags_cc!": [ "-fno-exceptions" ],
         "msvs_settings": {
@@ -20,7 +21,7 @@
         }
       }],
       ['OS=="mac"', {
-        "sources": [ "cursor.mm" ],
+        "sources": [ "src/cursor.mm" ],
         "link_settings": {
           "libraries": [
             "-framework Cocoa"
