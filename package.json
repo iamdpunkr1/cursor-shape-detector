@@ -36,6 +36,7 @@
     "index.js",
     "build/",
     "src/",
-    "binding.gyp"
+    "binding.gyp",
+    "test.js"
   ]
 }

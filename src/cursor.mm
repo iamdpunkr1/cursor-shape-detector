@@ -128,26 +128,26 @@ napi_value GetCursorShape(napi_env env, napi_callback_info info) {
             if (hash == nil) hash = getSha256Hash([currentCursor.image TIFFRepresentation]);
             
             // Match cursor types using hash comparison
-            if ([gReferenceHashes->handHash isEqualToString:hash]) {
-                cursorType = @"hand";
+           if ([gReferenceHashes->handHash isEqualToString:hash]) {
+                cursorType = @"pointer";
             } else if ([gReferenceHashes->resizeUpDownHash isEqualToString:hash]) {
-                cursorType = @"resize-row";
+                cursorType = @"ns-resize";
             } else if ([gReferenceHashes->operationNotAllowedHash isEqualToString:hash]) {
                 cursorType = @"not-allowed";
             } else if ([gReferenceHashes->iBeamHash1 isEqualToString:hash] || [gReferenceHashes->iBeamHash2 isEqualToString:hash]) {
-                cursorType = @"ibeam";
+                cursorType = @"text";
             } else if ([gReferenceHashes->resizeLeftRightHash isEqualToString:hash]) {
-                cursorType = @"resize-col";
+                cursorType = @"ew-resize";
             } else if ([gReferenceHashes->crosshairHash isEqualToString:hash]) {
                 cursorType = @"crosshair";
             } else if ([gReferenceHashes->arrowHash isEqualToString:hash]) {
                 cursorType = @"default";
             } else if ([gReferenceHashes->resizeUpHash isEqualToString:hash]) {
-                cursorType = @"resize-up";
+                cursorType = @"n-resize";
             } else if ([gReferenceHashes->resizeDownHash isEqualToString:hash]) {
-                cursorType = @"resize-down";
+                cursorType = @"s-resize";
             } else if ([gReferenceHashes->disappearingItemHash isEqualToString:hash]) {
-                cursorType = @"disappearing-item";
+                cursorType = @"none";
             } else if ([gReferenceHashes->contextualMenuHash isEqualToString:hash]) {
                 cursorType = @"context-menu";
             } else if ([gReferenceHashes->dragCopyHash isEqualToString:hash]) {
@@ -159,6 +159,7 @@ napi_value GetCursorShape(napi_env env, napi_callback_info info) {
             } else if ([gReferenceHashes->closeHandHash isEqualToString:hash]) {
                 cursorType = @"grabbing";
             }
+
         }
         
         napi_value result;
