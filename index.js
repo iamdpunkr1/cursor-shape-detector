@@ -1,5 +1,6 @@
-const { getCursorShape } = require('bindings')('cursor.node');
+const { getCursorShape, cleanup } = require('bindings')('cursor.node');
 
 module.exports = {
-    getCursorShape
+    getCursorShape,
+    cleanup
 };

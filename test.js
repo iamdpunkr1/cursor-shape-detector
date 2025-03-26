@@ -1,4 +1,4 @@
-const { getCursorShape } = require("./index");
+const { getCursorShape, cleanup } = require("./index");
 
 let interval =  setInterval(()=>{
     console.log("Cursor Shape: ", getCursorShape());

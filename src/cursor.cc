@@ -32,9 +32,18 @@ Napi::Value GetCursorShape(const Napi::CallbackInfo& info) {
     return Napi::String::New(env, "default");
 }
 
+// New cleanup function
+Napi::Value Cleanup(const Napi::CallbackInfo& info) {
+    Napi::Env env = info.Env();
+    // Currently no resources to clean up, so just return true
+    // You can add cleanup logic here if needed in the future
+    return Napi::Boolean::New(env, true);
+}
+
 Napi::Object Init(Napi::Env env, Napi::Object exports) {
     exports.Set("getCursorShape", Napi::Function::New(env, GetCursorShape));
-    return exports;
+    exports.Set("cleanup", Napi::Function::New(env, Cleanup));
+    return exports; 
 }
 
 NODE_API_MODULE(cursor, Init)
